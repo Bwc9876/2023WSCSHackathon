@@ -1,4 +1,4 @@
-# Stuff I did
+# Stuff I (Ellis) did
 
 [This website](http://www.earthsendangered.com/search-groups2.asp)
 
