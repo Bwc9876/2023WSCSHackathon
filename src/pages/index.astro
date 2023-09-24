@@ -8,7 +8,7 @@ const iconSize = "45px";
 
 <Layout title="Make the Marine Seen">
   <h1>
-    Make the <span class="gradient-text">Marine Seen</span>
+    Make the <span>Marine Seen</span>
   </h1>
   <p>
     Over <strong>2,000</strong> oceanic species of animals have been affected
@@ -150,8 +150,34 @@ const iconSize = "45px";
 </Layout>
 
 <style>
+  @keyframes scroll {
+    from {
+      background-position: 0% 0;
+    }
+    to {
+      background-position: var(--bg-size) 0;
+    }
+  }
+
   h1 {
-    margin-bottom: 1rem;
+    --bg-size: 500%;
+    background-size: var(--bg-size) 200% !important;
+    background-repeat: repeat-x;
+    background-image: linear-gradient(
+      120deg,
+      var(--primary),
+      var(--accent) 20%,
+      var(--primary)
+    );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: scroll 20s linear infinite forwards !important;
+  }
+
+  h1 {
+    margin-bottom: 2rem;
+    text-align: center;
+    font-size: 3rem;
   }
 
   h3 {
