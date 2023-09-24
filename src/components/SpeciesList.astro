@@ -1,0 +1,38 @@
+---
+import rammy from "../assets/RammysBirthday_1-copy.jpg";
+
+import SpeciesCard from "./SpeciesCard.astro";
+---
+
+<div>
+  <SpeciesCard img={rammy} name="Rammy" />
+  <SpeciesCard img={rammy} name="Rammy" />
+  <SpeciesCard img={rammy} name="Rammy" />
+  <SpeciesCard img={rammy} name="Rammy" />
+  <SpeciesCard img={rammy} name="Rammy" />
+  <SpeciesCard img={rammy} name="Rammy" />
+  <SpeciesCard img={rammy} name="Rammy" />
+  <SpeciesCard img={rammy} name="Rammy" />
+  <SpeciesCard img={rammy} name="Rammy" />
+  <SpeciesCard img={rammy} name="Rammy" />
+  <SpeciesCard img={rammy} name="Rammy" />
+  <SpeciesCard img={rammy} name="Rammy" />
+  <SpeciesCard img={rammy} name="Rammy" />
+  <SpeciesCard img={rammy} name="Rammy" />
+  <SpeciesCard img={rammy} name="Rammy" />
+</div>
+
+<style>
+  div {
+    padding: 20px 0;
+    margin: 10px 0;
+    --border: 1px solid var(--accent);
+    border-top: var(--border);
+    border-bottom: var(--border);
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 1rem;
+    overflow: auto;
+    width: 100%;
+  }
+</style>

@@ -1,0 +1,170 @@
+---
+import Layout from "../layouts/Layout.astro";
+import SpeciesList from "../components/SpeciesList.astro";
+import Icon from "astro-icon";
+
+const iconSize = "45px";
+---
+
+<Layout title="Make the Marine Seen">
+  <h1>
+    Make the <span class="gradient-text"
+      >Marine <span class="pop-text">Seen</span></span
+    >
+  </h1>
+  <p>
+    Over 2,000 oceanic species of animals have been affected and hurt by plastic
+    pollution in our oceans.
+  </p>
+  <SpeciesList />
+  <h2>What <span class="gradient-text">Effects</span> Does It Have?</h2>
+  <p>
+    This plastic can have a variety of effects on the lives of these animals.
+    From getting tangles in them resulting in asphixiation. To being eaten by
+    the animals resulting in toxic chemicals being released into their bodies,
+    possibly causing death.
+  </p>
+  <p>
+    Not only does this affect animals, the plastics can break down to
+    microscopic levels which could later be ingested by humans!
+  </p>
+  <h2>What can <span class="gradient-text">we do</span>?</h2>
+  <p>
+    There are many things we as a society can do to help lessen the impact of
+    plastic on marine life and the ocean.
+  </p>
+  <div class="split">
+    <div>
+      <h3>
+        <Icon name="mdi:biohazard" width={iconSize} height={iconSize} /> Make
+        plastic less toxic
+      </h3>
+      <p>
+        By making plastic less toxic we can help to prevent animals from having
+        toxic chemicals in their guts. Which will help them live longer and
+        happier.
+      </p>
+    </div>
+    <div>
+      <h3>
+        <Icon name="mdi:pipe-leak" width={iconSize} height={iconSize} /> Stop
+        plastic leakage into the environment
+      </h3>
+      <p>
+        We need to stop plastic at the source by making sure it's not leaked
+        into the environment via dumping, littering, etc. This will help to
+        prevent animals from getting tangled in plastic and dying. As well as
+        stopping them from ingesting any plastic.
+      </p>
+    </div>
+  </div>
+  <div class="split">
+    <div>
+      <h3>
+        <Icon name="mdi:broom" width={iconSize} height={iconSize} /> Remove
+        plastic from the environment
+      </h3>
+      <p>
+        We need to remove plastic from the environment to help prevent animals
+        from getting tangled in plastic and dying. As well as stopping them from
+        ingesting any plastic. There are many ways to do this from manual
+        removal by-hand to automated removal via collection systems.
+      </p>
+    </div>
+    <div>
+      <h3>
+        <Icon name="octicon:law-16" width={iconSize} height={iconSize} /> Hold
+        corporations accountable
+      </h3>
+      <p>
+        Corporation need to be held accoutnable for their contributions to the
+        amount of plastic in the ocean. By stopping these corportations from
+        dumping waste we can stop plastic directly at the source.
+      </p>
+    </div>
+  </div>
+  <h2>What can <span class="gradient-text">you do</span>?</h2>
+  <p>
+    There are many things you can do to help lessen the impact of plastic on
+    marine life and the ocean.
+  </p>
+  <div class="split">
+    <div>
+      <h3>
+        <Icon name="raphael:paper" width={iconSize} height={iconSize} /> Reduce
+        your plastic usage
+      </h3>
+      <p>
+        By reducing your plastic usage you can help to reduce the amount of
+        plastic that is leaked into the environment. Look for reusable or
+        biodegradable products over single-use plastic ones. Examples include
+        water bottles, straws, and bags.
+      </p>
+    </div>
+    <div>
+      <h3>
+        <Icon name="mdi:recycle" width={iconSize} height={iconSize} /> Recycle
+        your plastic
+      </h3>
+      <p>
+        By recycling your plastic that gets dumped into the environment. By
+        recycling plastic it gets re-used for other products instead of being
+        wasted and helpful to no one.
+      </p>
+    </div>
+  </div>
+</Layout>
+
+<style>
+  h1 {
+    margin-bottom: 1rem;
+  }
+
+  h3 {
+    display: flex;
+    align-items: top;
+    gap: 0.75rem;
+    margin-bottom: 0 !important;
+  }
+
+  div:nth-child(odd) > h3 > [astro-icon] {
+    color: var(--accent);
+  }
+
+  div:nth-child(even) > h3 > [astro-icon] {
+    color: var(--primary);
+  }
+
+  div.split {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+  }
+
+  div.split > div {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+    width: 50%;
+  }
+
+  div.split > div > h3,
+  div.split > div > p {
+    flex-grow: 1;
+  }
+
+  @keyframes pop {
+    from {
+      text-shadow: 0 2px var(--accent);
+    }
+
+    to {
+      text-shadow: 0 0 50px white;
+    }
+  }
+
+  span.pop-text {
+    text-decoration: underline;
+    animation: pop 2s 10ms infinite alternate;
+  }
+</style>

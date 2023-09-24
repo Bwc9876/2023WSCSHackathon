@@ -1,0 +1,66 @@
+---
+import "@picocss/pico/css/pico.min.css";
+
+interface Props {
+  title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="description"
+      content="Over 2,000 oceanic species of animals have been affected and hurt by plastic pollution in our oceans."
+    />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+  </head>
+  <body>
+    <main class="container">
+      <slot />
+    </main>
+  </body>
+</html>
+
+<style is:global>
+  :root {
+    --text: #e2f6f8;
+    --background: #040f11;
+    --primary: hsl(185, 71%, 48%) !important;
+    --secondary: hsl(246, 63%, 16%) !important;
+    --accent: #5448d5;
+    --spacing: 0.5rem !important;
+    --primary-hover: hsl(185, 71%, 35%) !important;
+    --primary-focus: hsl(185, 71%, 20%) !important;
+    --secondary-hover: hsl(246, 63%, 25%) !important;
+    --secondary-focus: hsl(246, 63%, 30%) !important;
+    --tooltip-color: var(--muted-color) !important;
+    --tooltip-background-color: var(--secondary) !important;
+    --background-color: var(--background) !important;
+    --card-background-color: var(--secondary) !important;
+    --card-sectionning-background-color: var(--secondary) !important;
+    --dropdown-background-color: var(--secondary) !important;
+    --dropdown-hover-background-color: var(--secondary-hover) !important;
+    --dropdown-border-color: var(--secondary) !important;
+    --color: var(--text) !important;
+    --h1-color: var(--primary) !important;
+    --h2-color: var(--text) !important;
+    --h3-color: var(--text) !important;
+    --h4-color: var(--text) !important;
+    --h5-color: var(--text) !important;
+    --h6-color: var(--text) !important;
+    --muted-color: var(--text) !important;
+  }
+
+  .gradient-text {
+    background: linear-gradient(120deg, var(--primary), var(--accent) 70%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+</style>
