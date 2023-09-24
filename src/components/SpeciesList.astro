@@ -1,25 +1,17 @@
 ---
-import rammy from "../assets/RammysBirthday_1-copy.jpg";
-
 import SpeciesCard from "./SpeciesCard.astro";
+
+import species from "../assets/species.json";
+
+const images = species.map((_, i) => import(`../assets/species-img/${i}.jpg`));
 ---
 
 <div>
-  <SpeciesCard img={rammy} name="Rammy" />
-  <SpeciesCard img={rammy} name="Rammy" />
-  <SpeciesCard img={rammy} name="Rammy" />
-  <SpeciesCard img={rammy} name="Rammy" />
-  <SpeciesCard img={rammy} name="Rammy" />
-  <SpeciesCard img={rammy} name="Rammy" />
-  <SpeciesCard img={rammy} name="Rammy" />
-  <SpeciesCard img={rammy} name="Rammy" />
-  <SpeciesCard img={rammy} name="Rammy" />
-  <SpeciesCard img={rammy} name="Rammy" />
-  <SpeciesCard img={rammy} name="Rammy" />
-  <SpeciesCard img={rammy} name="Rammy" />
-  <SpeciesCard img={rammy} name="Rammy" />
-  <SpeciesCard img={rammy} name="Rammy" />
-  <SpeciesCard img={rammy} name="Rammy" />
+  {
+    species.map((species, i) => (
+      <SpeciesCard name={species} img={images[i] as unknown as ImageMetadata} />
+    ))
+  }
 </div>
 
 <style>

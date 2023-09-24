@@ -10,8 +10,8 @@ const { name, img } = Astro.props;
 
 <div class="card">
   <div class="header">
-    {img && <Image width="400" src={img} alt={name} />}
-    <strong>{name}</strong>
+    {img && <Image width="400" height="400" src={img} alt={name} />}
+    <em>{name}</em>
   </div>
 </div>
 
@@ -19,7 +19,7 @@ const { name, img } = Astro.props;
   div.card {
     display: flex;
     flex-direction: column;
-    height: 100%;
+    min-height: 0;
     min-width: 30%;
     background-color: var(--secondary);
     padding: calc(var(--spacing) * 2);
@@ -39,7 +39,9 @@ const { name, img } = Astro.props;
     width: 100%;
   }
 
-  div.header > strong {
+  div.header > em {
+    flex-grow: 1;
+    align-items: center;
     font-size: larger;
   }
 
